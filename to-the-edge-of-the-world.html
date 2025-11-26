@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To the Edge of the World | Qiujie Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <section class="project-hero reveal">
+          <p
+            style="
+              font-family: 'SF Mono', ui-monospace;
+              font-size: 11px;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: var(--text-dim);
+              margin-bottom: 4px;
+            "
+          >
+            PROJECT / TO THE EDGE OF THE WORLD (CAVE)
+          </p>
+          <h1 class="project-hero-title">To the Edge of the World</h1>
+          <p class="project-hero-sub">
+            A CAVE room experience on a motion platform about a perilous sea
+            journey.
+          </p>
+
+          <div class="project-hero-meta">
+            <span class="meta-pill meta-pill--accent"
+              >Producer · Programmer · Technical Artist</span
+            >
+            <span class="meta-pill">CAVE + Vive Tracker</span>
+            <span class="meta-pill">2-week project · 2021/10/9–11/2</span>
+          </div>
+
+          <div class="project-links" style="margin-top: 10px">
+            <a
+              class="project-link"
+              href="https://qiujiew.wixsite.com/qiujiewu/to-the-edge-of-the-world"
+              target="_blank"
+              >Original Wix Page ↗</a
+            >
+            <a
+              class="project-link"
+              href="https://github.com"
+              target="_blank"
+              >Download (GitHub) ↗</a
+            >
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_3cf872f7ac4c46ca982d2a7336b9ca29~mv2.png/v1/fill/w_780,h_439,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/019320_3cf872f7ac4c46ca982d2a7336b9ca29~mv2.png"
+              alt="To the Edge of the World key art"
+            />
+            <p class="project-media-caption">
+              Illustration for the CAVE experience: a giant sea creature,
+              a lighthouse and a ship at the edge of the world.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Overview</h3>
+          <p>
+            To the Edge of the World is a short narrative experience set in
+            CMU’s CAVE room. Guests stand on a motion platform surrounded
+            by projections that simulate travelling at sea. They join a
+            crew of three sailors on a quest to find the “edge of the
+            world”, encountering monsters, storms and moments of doubt
+            along the way.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Theme & Setup</h3>
+          <p>
+            The assigned theme was to guide the guest through an
+            interactive story using experimental platforms. We combined:
+          </p>
+          <ul>
+            <li>
+              <strong>CAVE:</strong> a room-sized space with three
+              projection walls and a motion platform on the floor.
+            </li>
+            <li>
+              <strong>Vive Trackers:</strong> used to track the boat’s
+              movement and the guest’s position for camera control.
+            </li>
+            <li>
+              <strong>Improv actors:</strong> performers in the room who
+              interact with the guest and reinforce story beats.
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Role & Contributions</h3>
+          <ul>
+            <li>
+              As <strong>producer</strong>, coordinated a two-week schedule
+              and kept art, design and tech aligned.
+            </li>
+            <li>
+              As <strong>programmer</strong>, implemented CAVE integration,
+              tracker-based camera logic and interaction events.
+            </li>
+            <li>
+              As <strong>technical artist</strong>, tuned lighting, water
+              shaders and visual effects to support the narrative beats.
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Experience Flow</h3>
+          <p>
+            The story begins with excitement as the sailors chase a mythic
+            destination. As they repeatedly pass the same lighthouse,
+            tension rises and one crew member begins to doubt the captain.
+            The guest is placed right in the middle of this conflict,
+            surrounded by waves, sounds and performers.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Reflection</h3>
+          <p>
+            Building for a CAVE space pushed me to think beyond the headset
+            and treat the entire room as a medium. I learned how important
+            it is to coordinate timing between projections, physical
+            motion, acting and sound design so the audience feels fully
+            immersed.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <a class="btn btn-secondary" href="index.html#projects">
+            ← Back to all projects
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

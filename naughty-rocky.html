@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Naughty Rocky | Qiujie Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <section class="project-hero reveal">
+          <p
+            style="
+              font-family: 'SF Mono', ui-monospace;
+              font-size: 11px;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: var(--text-dim);
+              margin-bottom: 4px;
+            "
+          >
+            PROJECT / NAUGHTY ROCKY
+          </p>
+          <h1 class="project-hero-title">Naughty Rocky</h1>
+          <p class="project-hero-sub">
+            A VR game on Oculus Quest 2 from the point of view of a naughty
+            dog.
+          </p>
+
+          <div class="project-hero-meta">
+            <span class="meta-pill meta-pill--accent"
+              >Programmer · Designer</span
+            >
+            <span class="meta-pill">Oculus Quest 2 · VR</span>
+            <span class="meta-pill">Unity3D</span>
+            <span class="meta-pill">2-week project · 2021/9/21–10/5</span>
+          </div>
+
+          <div class="project-links" style="margin-top: 10px">
+            <a
+              class="project-link"
+              href="https://qiujiew.wixsite.com/qiujiewu/naughty-rocky"
+              target="_blank"
+              >Original Wix Page ↗</a
+            >
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_e5d40a5c2c9241fa865a125ef0ec2c66~mv2.png/v1/fill/w_980,h_367,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/019320_e5d40a5c2c9241fa865a125ef0ec2c66~mv2.png"
+              alt="Naughty Rocky key art"
+            />
+            <p class="project-media-caption">
+              Players become Rocky, a mischievous dog who must fix the mess
+              before the owner returns.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Overview</h3>
+          <p>
+            Naughty Rocky is a VR game created for the
+            <em>Building Virtual Worlds</em> course at CMU. Players see the
+            world through Rocky’s eyes as he runs around the apartment,
+            wreaks havoc and then scrambles to clean everything up when the
+            owner announces she is on her way home.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Role & Responsibilities</h3>
+          <p>
+            I was responsible for core gameplay engineering, animation and
+            brainstorming interactive moments.
+          </p>
+          <ul>
+            <li>
+              Implemented object interactions such as opening drawers,
+              spraying paint, pouring drinks and throwing trash.
+            </li>
+            <li>
+              Set up physics behaviours so actions feel playful but still
+              readable to new VR users.
+            </li>
+            <li>
+              Helped design the overall flow from “chaos” to “clean-up”
+              phase.
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Theme & Design</h3>
+          <p>
+            The assignment combined the ideas of a naïve guest and a strong
+            feeling of freedom. Our goal was to create a highly interactive
+            environment where guests can almost do anything they can think
+            of, without relying on long textual instructions. Visual cues,
+            sound effects and Rocky’s perspective guide players instead.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Takeaways</h3>
+          <p>
+            This project taught me how to support first-time VR players:
+            affordances need to be obvious, and feedback must be immediate
+            so people feel confident experimenting with the environment.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <a class="btn btn-secondary" href="index.html#projects">
+            ← Back to all projects
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

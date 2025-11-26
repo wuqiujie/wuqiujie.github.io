@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trick or Treat (AR) | Qiujie Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <section class="project-hero reveal">
+          <p
+            style="
+              font-family: 'SF Mono', ui-monospace;
+              font-size: 11px;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: var(--text-dim);
+              margin-bottom: 4px;
+            "
+          >
+            PROJECT / TRICK OR TREAT (AR)
+          </p>
+          <h1 class="project-hero-title">Trick or Treat</h1>
+          <p class="project-hero-sub">
+            A mixed-reality ghost-catching game on HoloLens 2.
+          </p>
+
+          <div class="project-hero-meta">
+            <span class="meta-pill meta-pill--accent"
+              >Programmer · Designer</span
+            >
+            <span class="meta-pill">HoloLens 2 · Mixed Reality</span>
+            <span class="meta-pill">Unity · C#</span>
+            <span class="meta-pill">2-week project · 2021/9/7–9/21</span>
+          </div>
+
+          <div class="project-links" style="margin-top: 10px">
+            <a
+              class="project-link"
+              href="https://qiujiew.wixsite.com/qiujiewu/trick-or-treat"
+              target="_blank"
+              >Original Wix Page ↗</a
+            >
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_daf44de0909c4e84b92d1659bdbc7d4d~mv2.png/v1/fill/w_735,h_420,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/019320_daf44de0909c4e84b92d1659bdbc7d4d~mv2.png"
+              alt="Trick or Treat environment"
+            />
+            <p class="project-media-caption">
+              Halloween village scene where players catch ghosts and drag
+              them into a magic cauldron.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Overview</h3>
+          <p>
+            Trick or Treat is a short AR experience where players wear a
+            HoloLens 2 headset and rescue children from mischievous ghosts.
+            The ghosts roam around a Halloween-themed environment, and
+            players use hand tracking to grab and throw them into a glowing
+            cauldron.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Theme & Core Idea</h3>
+          <p>
+            The assigned prompt was that the guest helps one character who
+            is afraid of another. We turned this into a story about
+            frightened children and friendly magic: the player acts as a
+            protector who defeats ghosts instead of being scared by them.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Role & Implementation</h3>
+          <ul>
+            <li>Connected the Unity project to HoloLens 2 and debugged MR build issues.</li>
+            <li>Implemented game mechanics: ghost spawning, grabbing and throwing interactions.</li>
+            <li>Set up scenes, UI, animations and transitions between stages.</li>
+            <li>Created lighting, shaders and post-processing to enhance atmosphere.</li>
+            <li>Handled quality assurance and playtesting with classmates.</li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Pathfinding & Behaviour</h3>
+          <p>
+            To make ghosts feel alive, we used an A*-based pathfinding
+            system to navigate them through the environment. Different
+            ghost types move in distinct patterns, giving players a variety
+            of challenges when timing their hand gestures.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <a class="btn btn-secondary" href="index.html#projects">
+            ← Back to all projects
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

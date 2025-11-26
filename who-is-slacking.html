@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Who is Slacking | Qiujie Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <section class="project-hero reveal">
+          <p
+            style="
+              font-family: 'SF Mono', ui-monospace;
+              font-size: 11px;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: var(--text-dim);
+              margin-bottom: 4px;
+            "
+          >
+            PROJECT / WHO IS SLACKING (EYE TRACKER)
+          </p>
+          <h1 class="project-hero-title">Who is Slacking</h1>
+          <p class="project-hero-sub">
+            A small office game where your gaze reveals which employees are
+            not working.
+          </p>
+
+          <div class="project-hero-meta">
+            <span class="meta-pill meta-pill--accent"
+              >Programmer · Designer</span
+            >
+            <span class="meta-pill">Tobii Eye Tracker 5</span>
+            <span class="meta-pill">5-day project · 2021/10/6–10/11</span>
+          </div>
+
+          <div class="project-links" style="margin-top: 10px">
+            <a
+              class="project-link"
+              href="https://qiujiew.wixsite.com/qiujiewu/who-is-slacking"
+              target="_blank"
+              >Original Wix Page ↗</a
+            >
+            <a
+              class="project-link"
+              href="https://github.com"
+              target="_blank"
+              >Download (GitHub) ↗</a
+            >
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_0a7672cfd4d641768e0d4b0c75f39136~mv2.png/v1/fill/w_782,h_433,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/019320_0a7672cfd4d641768e0d4b0c75f39136~mv2.png"
+              alt="Who is Slacking key art"
+            />
+            <p class="project-media-caption">
+              The player is the boss; gaze focuses on suspicious employees
+              and triggers reactions.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Overview</h3>
+          <p>
+            In Who is Slacking, players become a manager watching over an
+            open-plan office. Using an eye tracker, the game interprets the
+            player’s gaze as a way to “inspect” employees. If the player
+            stares at a lazy worker long enough, that character reacts in a
+            humorous way.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Theme & Goal</h3>
+          <p>
+            The jam theme challenged us to build a fun, focus-driven
+            experience in a week. I wanted to highlight how eye tracking
+            can serve as both input and storytelling device—where simply
+            looking at something can change the scene.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Role & Implementation</h3>
+          <ul>
+            <li>
+              Implemented the full gameplay loop, from eye-gaze detection
+              to employee reactions and camera movement.
+            </li>
+            <li>
+              Integrated Tobii Eye Tracker 5 and mapped gaze points to
+              characters in the scene.
+            </li>
+            <li>
+              Co-designed game flow, pacing and difficulty with teammates.
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <a class="btn btn-secondary" href="index.html#projects">
+            ← Back to all projects
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>s
