@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resume | Qiujie (Kristin) Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Matrix hacker background -->
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="resume.html">Resume</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <!-- Header -->
+        <section class="section-header reveal">
+          <h1 class="section-title">Resume</h1>
+          <p class="section-subtitle">
+            A quick overview of my education, professional experience and
+            technical skills — focused on computer graphics, AR/VR and
+            interactive systems.
+          </p>
+        </section>
+
+        <!-- Actions row: download / view PDF -->
+        <section class="reveal" style="margin-bottom: 24px">
+          <div class="contact-card">
+            <div class="contact-main">
+              <p>
+                Prefer a traditional PDF? You can download or open my latest
+                resume here. For the most up-to-date version, this link is the
+                source of truth.
+              </p>
+            </div>
+            <div class="contact-links">
+              <!-- TODO: replace with your real PDF URL -->
+              <a
+                class="btn btn-primary"
+                href="YOUR_RESUME_PDF_URL_HERE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download PDF
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="YOUR_RESUME_PDF_URL_HERE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open in new tab
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Resume content -->
+        <section class="resume-grid">
+          <!-- LEFT COLUMN: Experience + Projects -->
+          <div class="reveal">
+            <div class="resume-section">
+              <div class="resume-section-title">Experience</div>
+
+              <!-- Example: Apple — you can edit dates & title -->
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div>
+                    <div class="resume-item-title">
+                      Vision Pro / AR·VR Software Engineer
+                    </div>
+                    <div class="resume-item-subtitle">Apple · Cupertino, CA</div>
+                  </div>
+                  <div class="resume-item-meta">
+                    20XX – Present
+                  </div>
+                </div>
+                <ul>
+                  <li>
+                    Build and prototype spatial computing experiences on Apple
+                    Vision Pro, focusing on immersive 3D scenes, interaction
+                    design and performance.
+                  </li>
+                  <li>
+                    Collaborate with designers and researchers to translate
+                    interaction concepts into shippable, robust implementations.
+                  </li>
+                  <li>
+                    Work across tools and runtime code to support workflows like
+                    scene editing, annotation and content review.
+                  </li>
+                </ul>
+                <div class="resume-tag-row">
+                  <span class="resume-tag resume-tag--accent">visionOS</span>
+                  <span class="resume-tag">Swift / Objective-C</span>
+                  <span class="resume-tag">Graphics</span>
+                  <span class="resume-tag">AR / VR</span>
+                </div>
+              </div>
+
+              <!-- Example: ETC / internships — customize as needed -->
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div>
+                    <div class="resume-item-title">
+                      Game / Experience Programmer
+                    </div>
+                    <div class="resume-item-subtitle">
+                      Carnegie Mellon University · Entertainment Technology
+                      Center
+                    </div>
+                  </div>
+                  <div class="resume-item-meta">
+                    20XX – 20XX
+                  </div>
+                </div>
+                <ul>
+                  <li>
+                    Prototyped and shipped multiple short AR/VR and installation
+                    experiences in small interdisciplinary teams.
+                  </li>
+                  <li>
+                    Implemented core mechanics, interaction systems, UI and
+                    polish for class projects and public festivals.
+                  </li>
+                  <li>
+                    Worked closely with artists and sound designers to align
+                    visuals, audio and interaction feel.
+                  </li>
+                </ul>
+                <div class="resume-tag-row">
+                  <span class="resume-tag resume-tag--accent">Unity3D</span>
+                  <span class="resume-tag">Unreal Engine 4</span>
+                  <span class="resume-tag">C# / C++</span>
+                </div>
+              </div>
+
+              <!-- TODO: add more positions here -->
+              <!--
+              <div class="resume-item">
+                ...
+              </div>
+              -->
+            </div>
+
+            <div class="resume-section" style="margin-top: 16px">
+              <div class="resume-section-title">Selected Projects</div>
+
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div class="resume-item-title">Virtual Film Set</div>
+                  <div class="resume-item-meta">Research · VR · HTC Vive</div>
+                </div>
+                <ul>
+                  <li>
+                    Designed and implemented an adaptive assisting interface for
+                    teaching filmmaking in a virtual studio.
+                  </li>
+                  <li>
+                    Conducted a study with 24 participants; results showed
+                    improved learning experience and knowledge gain.
+                  </li>
+                </ul>
+                <div class="resume-tag-row">
+                  <span class="resume-tag resume-tag--accent">VR</span>
+                  <span class="resume-tag">Unity</span>
+                  <span class="resume-tag">User Study</span>
+                </div>
+              </div>
+
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div class="resume-item-title">Shapetopia</div>
+                  <div class="resume-item-meta">WebGL · Card Game</div>
+                </div>
+                <ul>
+                  <li>
+                    Led programming for a policymaking card game about
+                    sustainability, deployed as a browser experience.
+                  </li>
+                  <li>
+                    Collaborated with designers and domain experts to communicate
+                    complex concepts through accessible mechanics.
+                  </li>
+                </ul>
+                <div class="resume-tag-row">
+                  <span class="resume-tag resume-tag--accent">WebGL</span>
+                  <span class="resume-tag">Unity</span>
+                  <span class="resume-tag">Systems Design</span>
+                </div>
+              </div>
+
+              <!-- You can also just point to the Portfolio page -->
+              <div style="margin-top: 8px">
+                <a class="project-link" href="index.html#projects">
+                  View full project list ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Education + Skills + Extras -->
+          <div class="reveal">
+            <div class="resume-section">
+              <div class="resume-section-title">Education</div>
+
+              <!-- Example: CMU ETC -->
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div>
+                    <div class="resume-item-title">
+                      Master of Entertainment Technology
+                    </div>
+                    <div class="resume-item-subtitle">
+                      Carnegie Mellon University · Entertainment Technology
+                      Center
+                    </div>
+                  </div>
+                  <div class="resume-item-meta">20XX – 20XX</div>
+                </div>
+                <ul>
+                  <li>
+                    Focus on game development, interactive storytelling and
+                    experimental interfaces.
+                  </li>
+                  <li>
+                    Built AR/VR, eye-tracking and CAVE experiences in rapid
+                    multi-week production cycles.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Example: Undergrad -->
+              <div class="resume-item">
+                <div class="resume-item-header">
+                  <div>
+                    <div class="resume-item-title">
+                      B.S. in Computer Science / Related Field
+                    </div>
+                    <div class="resume-item-subtitle">
+                      University Name · City, Country
+                    </div>
+                  </div>
+                  <div class="resume-item-meta">20XX – 20XX</div>
+                </div>
+                <ul>
+                  <li>
+                    Coursework in computer graphics, HCI, algorithms and
+                    software engineering.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="resume-section" style="margin-top: 16px">
+              <div class="resume-section-title">Technical Skills</div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Programming</div>
+                <p class="resume-item-subtitle">
+                  C, C++, C#, Java, JavaScript, TypeScript, React, HTML5, CSS,
+                  SQL, Lua
+                </p>
+              </div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Engines &amp; Frameworks</div>
+                <p class="resume-item-subtitle">
+                  Unity3D, Unreal Engine 4, visionOS / iOS frameworks, WebGL.
+                </p>
+              </div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Tools</div>
+                <p class="resume-item-subtitle">
+                  Visual Studio, Xcode, IntelliJ, Git, Perforce, LaTeX.
+                </p>
+              </div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Design &amp; Content</div>
+                <p class="resume-item-subtitle">
+                  Axure, Premiere, After Effects, Lightroom, Photoshop,
+                  Illustrator, Final Cut Pro, Maya.
+                </p>
+              </div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Hardware</div>
+                <p class="resume-item-subtitle">
+                  Apple Vision Pro, HoloLens, Oculus Quest, HTC Vive, Leap
+                  Motion, Kinect, Tobii Eye Tracker 5.
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-section" style="margin-top: 16px">
+              <div class="resume-section-title">Extras</div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Languages</div>
+                <p class="resume-item-subtitle">
+                  English, Mandarin Chinese.
+                </p>
+              </div>
+
+              <div class="resume-item" style="border-left-color: transparent">
+                <div class="resume-item-title">Interests</div>
+                <p class="resume-item-subtitle">
+                  AR/VR prototyping, game & interaction design, data
+                  visualization, playful learning experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section reveal" style="margin-top: 28px">
+          <a class="btn btn-secondary" href="index.html">← Back to home</a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
