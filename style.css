@@ -1,0 +1,817 @@
+/* =========
+   GLOBAL
+   ========= */
+
+:root {
+  --bg: #05070d;
+  --bg-alt: #090d17;
+  --accent: #00ff9c;
+  --accent-soft: rgba(0, 255, 156, 0.1);
+  --accent-strong: rgba(0, 255, 156, 0.5);
+  --text-main: #f5f7ff;
+  --text-dim: #9ca7c2;
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --danger: #ff4d9a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* 背景：矩阵雨 + 暗色渐变 */
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+#matrix-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.4;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top, #101936 0, #020308 55%, #000 100%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  pointer-events: none;
+}
+
+/* 顶部导航 */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.16),
+    rgba(5, 7, 13, 0.96)
+  );
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-logo {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo span.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* 通用布局 */
+
+main {
+  flex: 1;
+}
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 16px 80px;
+}
+
+section {
+  margin-bottom: 64px;
+}
+
+/* 按钮 */
+
+.btn {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 255, 156, 0.2),
+    transparent,
+    rgba(0, 255, 156, 0.16)
+  );
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: all 200ms ease-out;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--accent), #59ffd0);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 0 24px rgba(0, 255, 156, 0.55);
+}
+
+.btn-secondary {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* HERO 区域：终端 + 打字机 */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.terminal {
+  background: radial-gradient(
+    circle at top left,
+    rgba(0, 255, 156, 0.18),
+    var(--bg-alt)
+  );
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.75),
+    0 0 32px rgba(0, 255, 156, 0.08);
+  padding: 18px 18px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::after {
+  /* glitch 边缘光 */
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: conic-gradient(
+    from 120deg,
+    rgba(0, 255, 156, 0.4),
+    transparent,
+    transparent,
+    rgba(0, 255, 156, 0.5),
+    transparent
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: border-glow 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes border-glow {
+  0%,
+  40% {
+    opacity: 0;
+  }
+  45%,
+  60% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff5f57;
+  box-shadow: 0 0 10px rgba(255, 95, 87, 0.5);
+}
+
+.terminal-dot:nth-child(2) {
+  background: #febc2e;
+  box-shadow: 0 0 10px rgba(254, 188, 46, 0.5);
+}
+
+.terminal-dot:nth-child(3) {
+  background: #28c840;
+  box-shadow: 0 0 10px rgba(40, 200, 64, 0.5);
+}
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.terminal-body {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.prompt-line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.prompt-prefix {
+  color: var(--accent);
+}
+
+.typing {
+  display: inline-block;
+  min-height: 1.3em;
+  border-right: 2px solid var(--accent);
+  animation: blink 0.9s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.hero-title {
+  font-size: 28px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.hero-highlight {
+  margin-top: 12px;
+  color: var(--text-dim);
+}
+
+.hero-highlight span {
+  color: var(--accent);
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* 右侧 info */
+
+.hero-aside {
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.08),
+    rgba(5, 7, 13, 0.96)
+  );
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-aside::before {
+  /* 轻微扫光 */
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.16),
+    transparent 55%
+  );
+  opacity: 0;
+  animation: sweep 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sweep {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  45%,
+  55% {
+    opacity: 0.6;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(40%);
+  }
+}
+
+.hero-aside-title {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  color: var(--text-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  padding: 4px 9px;
+  font-size: 11px;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  color: var(--text-dim);
+  background: rgba(2, 5, 11, 0.9);
+}
+
+.pill--accent {
+  border-color: rgba(0, 255, 156, 0.6);
+  color: var(--accent);
+  background: rgba(0, 255, 156, 0.1);
+}
+
+.hero-aside-block {
+  margin-top: 8px;
+}
+
+.hero-aside-block h4 {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.hero-aside-block p {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Section 标题 */
+
+.section-header {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.section-title::before {
+  content: "//";
+  color: var(--accent);
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: var(--text-dim);
+  max-width: 420px;
+}
+
+/* 项目卡片网格（首页） */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.04),
+    rgba(3, 6, 15, 0.98)
+  );
+  padding: 16px 15px 16px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 160ms ease-out,
+    box-shadow 160ms ease-out,
+    border-color 160ms ease-out;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: conic-gradient(
+    from 120deg,
+    rgba(0, 255, 156, 0.45),
+    transparent,
+    transparent,
+    rgba(0, 255, 156, 0.45),
+    transparent
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 255, 156, 0.6);
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.85),
+    0 0 28px rgba(0, 255, 156, 0.22);
+}
+
+.project-card:hover::after {
+  opacity: 0.6;
+}
+
+.project-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-tagline {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--text-dim);
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.meta-pill {
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.meta-pill--accent {
+  border-color: rgba(0, 255, 156, 0.6);
+  color: var(--accent);
+  background: rgba(0, 255, 156, 0.06);
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 11px;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-soft);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+/* About 页面相关 */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.about-text {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: rgba(3, 6, 15, 0.96);
+  padding: 18px 16px 16px;
+}
+
+.about-text p + p {
+  margin-top: 10px;
+}
+
+.about-col {
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.06),
+    rgba(2, 5, 12, 0.98)
+  );
+  padding: 16px 16px 14px;
+  font-size: 13px;
+}
+
+.about-col h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 6px;
+  columns: 2;
+  column-gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .about-list {
+    columns: 1;
+  }
+}
+
+.about-list li {
+  margin-bottom: 4px;
+  color: var(--text-dim);
+}
+
+/* Contact */
+
+.contact-card {
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 156, 0.12),
+    rgba(3, 5, 11, 0.98)
+  );
+  padding: 18px 16px 16px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-main {
+  max-width: 520px;
+  color: var(--text-dim);
+}
+
+/* Project Detail 页面布局 */
+
+.project-hero {
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: radial-gradient(
+    circle at top left,
+    rgba(0, 255, 156, 0.12),
+    rgba(3, 5, 11, 0.98)
+  );
+  padding: 20px 18px 18px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero-title {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.project-hero-sub {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.project-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  margin-bottom: 10px;
+}
+
+.project-section {
+  margin-bottom: 26px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.project-section h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.project-section ul {
+  margin-left: 18px;
+  margin-top: 6px;
+}
+
+.project-section li + li {
+  margin-top: 2px;
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 14px 16px 18px;
+  font-size: 11px;
+  color: var(--text-dim);
+  text-align: center;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Reveal 动画 */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 420ms ease-out,
+    transform 420ms ease-out;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project detail media */
+
+.project-media {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-media img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: #000;
+  display: block;
+}
+
+.project-media-caption {
+  font-size: 12px;
+  color: var(--text-dim);
+}

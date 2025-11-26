@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Qiujie (Kristin) Wu | AR/VR Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="page">
+        <!-- Hero -->
+        <section class="hero reveal">
+          <div class="terminal">
+            <div class="terminal-header">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <div class="terminal-title">qiujie@portfolio: ~</div>
+            </div>
+            <div class="terminal-body">
+              <div class="prompt-line">
+                <span class="prompt-prefix">➜</span>
+                <span>whoami</span>
+              </div>
+              <div class="prompt-line">
+                <span class="prompt-prefix">▶</span>
+                <span class="hero-title">
+                  <span class="hero-name">Qiujie (Kristin) Wu</span>
+                </span>
+              </div>
+              <div class="prompt-line">
+                <span class="prompt-prefix">➜</span>
+                <span>cat roles.txt</span>
+              </div>
+              <div class="prompt-line">
+                <span class="prompt-prefix">▶</span>
+                <span class="typing" id="typing"></span>
+              </div>
+
+              <p class="hero-subtitle">
+                Developer + designer at the intersection of
+                <strong>Computer Graphics</strong> and
+                <strong>Human–Computer Interaction</strong>.
+              </p>
+
+              <p class="hero-highlight">
+                I build interactive experiences across
+                <span>AR/VR, eye tracking, CAVE, WebGL</span> and more — from
+                virtual film sets to playful mixed reality games.
+              </p>
+
+              <div class="hero-links">
+                <a class="btn btn-primary" href="#projects">View Portfolio ⏵</a>
+                <!-- TODO: 替换成你的真实简历地址 -->
+                <a
+                  class="btn btn-secondary"
+                  href="https://drive.google.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Resume.pdf</a
+                >
+                <a class="btn btn-secondary" href="mailto:qiujiewu1@gmail.com"
+                  >Email</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <div class="hero-aside-title">system.status / now</div>
+            <div class="pill-row">
+              <span class="pill pill--accent">AR/VR Development</span>
+              <span class="pill">Game Programming</span>
+              <span class="pill">Graphics &amp; HCI</span>
+              <span class="pill">Unity · Unreal · WebGL</span>
+            </div>
+
+            <div class="hero-aside-block">
+              <h4>Recent work</h4>
+              <p>
+                Virtual film sets, sustainable policymaking games, CAVE
+                experiences, AR ghost hunting, dog-POV VR and more.
+              </p>
+            </div>
+
+            <div class="hero-aside-block">
+              <h4>Find me</h4>
+              <p>
+                <!-- TODO: 替换为真实链接 -->
+                GitHub:
+                <a href="https://github.com" target="_blank" rel="noreferrer"
+                  >github.com</a
+                ><br />
+                LinkedIn:
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  >linkedin.com</a
+                >
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <!-- Projects / Portfolio -->
+        <section id="projects" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">
+              A selection of interactive experiences across VR, AR, WebGL,
+              eye-tracking and physical interfaces.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Virtual Film Set -->
+            <article class="project-card">
+              <h3 class="project-title">Virtual Film Set</h3>
+              <p class="project-tagline">
+                Adaptive assisting interface for learning virtual filmmaking.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Programmer · Designer</span
+                >
+                <span class="meta-pill">HTC Vive · VR</span>
+                <span class="meta-pill">Research</span>
+              </div>
+              <p class="project-desc">
+                An adaptive VR film set that scaffolds users with visual and
+                audio hints based on their skills and performance.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="virtual-film-set.html"
+                  >Details ↗</a
+                >
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/virtual-film-set"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- Shapetopia -->
+            <article class="project-card">
+              <h3 class="project-title">Shapetopia</h3>
+              <p class="project-tagline">
+                WebGL card game about sustainable policymaking.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent">Lead Programmer</span>
+                <span class="meta-pill">WebGL · Unity</span>
+              </div>
+              <p class="project-desc">
+                A policymaking simulation card game that explores how policies
+                interweave and impact society.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="shapetopia.html">Details ↗</a>
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/shapetopia"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- To the Edge of the World -->
+            <article class="project-card">
+              <h3 class="project-title">To the Edge of the World</h3>
+              <p class="project-tagline">
+                Immersive CAVE experience with motion platform.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Producer · Programmer</span
+                >
+                <span class="meta-pill">CAVE · Vive Tracker</span>
+              </div>
+              <p class="project-desc">
+                A physical CAVE installation with motion platform and improv
+                actors telling a story at sea.
+              </p>
+              <div class="project-links">
+                <a
+                  class="project-link"
+                  href="to-the-edge-of-the-world.html"
+                  >Details ↗</a
+                >
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/to-the-edge-of-the-world"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- Trick or Treat -->
+            <article class="project-card">
+              <h3 class="project-title">Trick or Treat</h3>
+              <p class="project-tagline">
+                AR ghost-catching game on HoloLens 2.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Programmer · Designer</span
+                >
+                <span class="meta-pill">HoloLens 2 · AR</span>
+              </div>
+              <p class="project-desc">
+                Catch ghosts with hand gestures and save children in a
+                pathfinding-driven AR environment.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="trick-or-treat.html"
+                  >Details ↗</a
+                >
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/trick-or-treat"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- Naughty Rocky -->
+            <article class="project-card">
+              <h3 class="project-title">Naughty Rocky</h3>
+              <p class="project-tagline">
+                Dog-POV VR game on Oculus Quest 2.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Programmer · Designer</span
+                >
+                <span class="meta-pill">Quest 2 · VR</span>
+              </div>
+              <p class="project-desc">
+                Play as a mischievous dog who must fix the chaos before the
+                owner comes home.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="naughty-rocky.html"
+                  >Details ↗</a
+                >
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/naughty-rocky"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- Who is Slacking -->
+            <article class="project-card">
+              <h3 class="project-title">Who is Slacking</h3>
+              <p class="project-tagline">
+                Office-boss game driven by Tobii eye tracking.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Programmer · Designer</span
+                >
+                <span class="meta-pill">Tobii Eye Tracker 5</span>
+              </div>
+              <p class="project-desc">
+                Use your gaze as input to monitor employees and catch slackers
+                in the office.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="who-is-slacking.html"
+                  >Details ↗</a
+                >
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/who-is-slacking"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+
+            <!-- Four Paws are Better Than One -->
+            <article class="project-card">
+              <h3 class="project-title">Four Paws are Better Than One</h3>
+              <p class="project-tagline">
+                Co-op festival game using DDR mat + MaKey MaKey.
+              </p>
+              <div class="project-meta">
+                <span class="meta-pill meta-pill--accent"
+                  >Programmer · Designer</span
+                >
+                <span class="meta-pill">DDR Mat · MaKey MaKey</span>
+              </div>
+              <p class="project-desc">
+                Two players cooperate via dance mat and pet controller to finish
+                playful tasks.
+              </p>
+              <div class="project-links">
+                <a class="project-link" href="fourpaws.html">Details ↗</a>
+                <a
+                  class="project-link"
+                  href="https://qiujiew.wixsite.com/qiujiewu/fourpawsarebetterthanone"
+                  target="_blank"
+                  >Original Page ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="reveal">
+          <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-main">
+              <p>
+                For opportunities, collaboration, or just to talk about AR/VR,
+                games and graphics, feel free to
+                <strong>reach out directly</strong>.
+              </p>
+              <p style="margin-top: 6px">
+                Mail:
+                <a href="mailto:qiujiewu1@gmail.com">qiujiewu1@gmail.com</a>
+              </p>
+            </div>
+
+            <div class="contact-links">
+              <a class="btn btn-secondary" href="mailto:qiujiewu1@gmail.com"
+                >Send Email</a
+              >
+              <!-- TODO: 替换 GitHub / LinkedIn -->
+              <a
+                class="btn btn-secondary"
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

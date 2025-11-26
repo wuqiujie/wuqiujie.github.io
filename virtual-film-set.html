@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Virtual Film Set | Qiujie Wu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="bg-overlay"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="dot"></span>
+          QW
+          <span style="opacity: 0.6">/ AR•VR</span>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#projects">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page">
+        <section class="project-hero reveal">
+          <p
+            style="
+              font-family: 'SF Mono', ui-monospace;
+              font-size: 11px;
+              letter-spacing: 0.18em;
+              text-transform: uppercase;
+              color: var(--text-dim);
+              margin-bottom: 4px;
+            "
+          >
+            PROJECT / VIRTUAL FILM SET
+          </p>
+          <h1 class="project-hero-title">Virtual Film Set</h1>
+          <p class="project-hero-sub">
+            An adaptive assisting interface that helps learners practice
+            virtual cinematography in VR.
+          </p>
+
+          <div class="project-hero-meta">
+            <span class="meta-pill meta-pill--accent">
+              Programmer · Designer
+            </span>
+            <span class="meta-pill">HTC Vive · VR</span>
+            <span class="meta-pill">2019–2020</span>
+            <span class="meta-pill">Research · WICED / Eurographics</span>
+          </div>
+
+          <div class="project-links" style="margin-top: 10px">
+            <a
+              class="project-link"
+              href="https://qiujiew.wixsite.com/qiujiewu/virtual-film-set"
+              target="_blank"
+              >Original Wix Page ↗</a
+            >
+            <a
+              class="project-link"
+              href="https://hal.inria.fr/hal-02888236/document"
+              target="_blank"
+              >Paper ↗</a
+            >
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=1ti7Kt2DNNs"
+              target="_blank"
+              >Conference Talk ↗</a
+            >
+          </div>
+
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/11062b_dc46f68abf504a6c883594d6cc2abc86f000.jpg/v1/fill/w_548,h_308,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_dc46f68abf504a6c883594d6cc2abc86f000.jpg"
+              alt="Virtual film set camera"
+            />
+            <p class="project-media-caption">
+              Filmmaking practice inside a virtual film set with adaptive
+              guidance.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Overview</h3>
+          <p>
+            Virtual Film Set is an experimental learning environment that
+            teaches filmmaking skills inside VR. Learners operate a
+            virtual film set with lights, cameras and actors, while an
+            assisting interface provides contextual hints through visuals
+            and audio. The system adapts to each learner’s performance and
+            experience level, with the goal of supporting practice without
+            taking away agency or creativity.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Role & Responsibilities</h3>
+          <ul>
+            <li>
+              Designed the user model describing how filmmakers progress
+              from beginner to mastery.
+            </li>
+            <li>
+              Implemented the assisting layer, including hint logic,
+              visual overlays and sound prompts.
+            </li>
+            <li>
+              Integrated the interface into an existing virtual film set
+              pipeline.
+            </li>
+            <li>
+              Designed and ran a controlled user study with 24
+              participants, and analysed both quantitative results and
+              open-ended feedback.
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Scaffolding & Adaptive Design</h3>
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_9c194c85925d4af183af99314c9e8724~mv2.gif/v1/fill/w_783,h_441,al_c,q_90,enc_avif,quality_auto/019320_9c194c85925d4af183af99314c9e8724~mv2.gif"
+              alt="Virtual film set overview animation"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_c991517e855b4abf8b6b35a081ae3854~mv2.png/v1/fill/w_639,h_198,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-15%20at%2021_03_05.png"
+              alt="Virtual reality + cinematography + scaffolding theory"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_b2163d5d564e4dab8a2369e8b6cb87ee~mv2.png/v1/fill/w_639,h_272,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-15%20at%2021_05_46.png"
+              alt="Scaffolding theory diagram"
+            />
+            <p class="project-media-caption">
+              The design combines VR cinematography with scaffolding theory
+              to provide step-by-step support that gradually fades as
+              learners become more confident.
+            </p>
+          </div>
+          <p style="margin-top: 10px">
+            The assisting interface is inspired by educational scaffolding:
+            learners receive more structured guidance at the beginning, and
+            the level of support decreases as they demonstrate higher
+            mastery. Hints can highlight areas of interest in the set,
+            suggest camera positions, or remind the learner about shot
+            composition and continuity.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>System Architecture & Hint Types</h3>
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_4bbf30b42c724736b9e9ccecf32292b2~mv2.png/v1/fill/w_639,h_282,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-15%20at%2021_16_52.png"
+              alt="Virtual film set architecture"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_0ab221b5f9604becb47046967fa0fda9~mv2.png/v1/fill/w_639,h_268,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-15%20at%2021_19_40.png"
+              alt="User model diagram"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_9cc6521969c9440789dd7b7c65fbc81f~mv2.gif/v1/fill/w_602,h_342,al_c,q_90,enc_avif,quality_auto/3.gif"
+              alt="Hint examples animation"
+            />
+          </div>
+          <p style="margin-top: 10px">
+            The system tracks learner actions through a user model spanning
+            four levels: beginner, intermediate, advanced and mastery.
+            Based on this model it chooses different hint types, ranging
+            from explicit arrows and overlays to subtler cues that preserve
+            creative freedom.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>Adaptive Mechanism & Study</h3>
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_2e035102402149f3bec261406bd9c9c0~mv2.png/v1/fill/w_568,h_336,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-15%20at%2023_27_43.png"
+              alt="Adaptive mechanism diagram"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_6807b5bb897b4973bc77325449efe375~mv2.png/v1/fill/w_639,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-16%20at%2000_49_08.png"
+              alt="Participant demographics"
+            />
+            <img
+              src="https://static.wixstatic.com/media/019320_f5960a7efe434e46ad3a1feff31a2736~mv2.png/v1/fill/w_639,h_387,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-16%20at%2000_57_29.png"
+              alt="Results chart"
+            />
+          </div>
+          <p style="margin-top: 10px">
+            The adaptive mechanism combines automatic monitoring with
+            explicit feedback from the learner. Participants can ask for
+            more or fewer hints, and the system updates their proficiency
+            level accordingly. In the study, participants using the
+            adaptive interface reported smoother learning experiences and
+            showed stronger gains on follow-up knowledge questions compared
+            to those using the film set without assistance.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <h3>User Feedback</h3>
+          <div class="project-media">
+            <img
+              src="https://static.wixstatic.com/media/019320_6346c855dfba4985841a86486caa824c~mv2.png/v1/fill/w_639,h_377,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Screen%20Shot%202022-01-16%20at%2001_01_28.png"
+              alt="User feedback chart"
+            />
+          </div>
+          <p style="margin-top: 10px">
+            Participants described the interface as supportive and
+            reassuring, especially when they were unsure about how to set
+            up lights or framing. Many felt the guidance struck a good
+            balance between teaching and letting them experiment on their
+            own.
+          </p>
+        </section>
+
+        <section class="project-section reveal">
+          <a class="btn btn-secondary" href="index.html#projects">
+            ← Back to all projects
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Qiujie (Kristin) Wu · Built with HTML, CSS
+      &amp; JavaScript.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
